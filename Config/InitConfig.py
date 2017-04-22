@@ -56,5 +56,11 @@ if __name__ == "__main__":
     print(conf.getValue("DataBase","host"));
     print(conf.getValue("DataBase","port"));
     print(conf.getValue("DataBase","user"));
-    print(conf.getValue("DataBase","passwd"));
+    print(conf.getValue("DataBase","password"));
     print(conf.getValue("DataBase","db"));
+
+
+    print(conf.getValue("Redis","host"));
+    print(conf.getValue("Redis","port"));
+    print(conf.getValue("Redis","password"));
+    print(conf.getValue("Redis","db"));

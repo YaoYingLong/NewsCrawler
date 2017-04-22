@@ -6,18 +6,17 @@ import time
 
 class Tools(object):
 
-    def timeStampTransform(self, timestamp):
-        timeArray = time.localtime(timestamp)
+    def timeStampToDate(self, timestamp):
+        timeArray = time.localtime(int(timestamp))
         otherStyleTime = time.strftime("%Y-%m-%d %H:%M:%S", timeArray)
         return otherStyleTime
 
-    def insert(self, original , new , pos):
+    def insert(self, original, new, pos):
         return original[:pos] + new + original[pos:]
 
-    def json_format_data(self , _str , url):
+    def json_format_data(self, _str, url):
         pattern = re.compile(r'(\w{8})wangning')
         json_name = pattern.search(url).group()
-        print(json_name)
         json_str = _str[9:(len(_str)-1)]
         _json = json.loads(json_str)
         datas = _json[json_name]
@@ -53,5 +52,5 @@ class Tools(object):
 
 if __name__ == "__main__":
     tools = Tools();
-    match = tools.isUrl("00AO0001|2247299")
+    match = tools.timeStampToDate("1491328679")
     print(match)
